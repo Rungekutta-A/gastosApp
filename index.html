@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Economía</title>
+  <link
+    rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Aplicación Para Gastos</h1>
+
+  <div class="row">
+
+    <div class="col l5 offset-l1 s12">
+
+      <div class="tableFormat">
+
+        <table id="transactionTable">
+          <tr>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Monto</th>
+            <th>Categoría</th>
+            <th>Eliminar</th>
+          </tr>
+        </table>
+
+      </div>
+
+    </div>
+    
+    <div class="col l5 s12  " >
+      <form id="transactionForm" class="transactionForm">
+
+
+        <div class="formField">
+          
+          <span>Tipo de Transacción</span>
+          <label>
+            <input class="with-gap" name="transactionType" type="radio" value="Ingreso" checked />
+          <span>Ingreso</span>
+          </label>
+        
+          <label>
+          <input class="with-gap" name="transactionType" type="radio" value="Egreso" checked />
+          <span>Egreso</span>
+          </label>
+         
+
+        </div>
+
+        <div class="formField">
+            <div class="input-field">
+                <label for="transactionDescription">Descripción</label>
+                <input required type="text" class="validate" id="transactionDescription" name="transactionDescription"/>
+            </div>
+        </div>
+
+        <div class="formField">
+            <div class="input-field">
+                  <label for="transactionAmount">Monto</label>
+                  <input required type="number" class="validate" id="transactionAmount"  min="0" name="transactionAmount"/>           
+            </div>
+        </div>
+
+        <div class="formField">
+          <label for="transactionCategory">Categoría</label>
+              <select class="browser-default" required id="transactionCategory" name="transactionCategory">
+                    <option value="" disabled selected>Elige Tu Categoria</option>
+                    <option value="1">Renta</option>
+                    <option value="2">Comida</option>
+                    <option value="3">Servicios</option>
+                    <option value="4">Trabajo</option>
+              </select>
+            
+        </div>
+
+        <div class="formField">
+          <div class="buttonSend">
+          <button id="botonEnvio">Añadir</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+     
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
